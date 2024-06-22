@@ -1,38 +1,27 @@
 <template>
   <div>
-    <header class="top-navegation-bar justify-elements-in-screen">
-      <div
-        class="top-navegation-bar__nav justify-elements-in-screen__container"
-      >
-        <NuxtLink to="/" class="top-navegation-bar__logo">
-          <NuxtImg
-            width="150"
-            height="44"
-            src="/images/logo-solvedrubik.png"
-            alt="logo-solvedrubik"
-          />
+    <header class="tnb jeis">
+      <div class="nav jeis__container">
+        <NuxtLink to="/" class="logo">
+          <slot name="logo" />
         </NuxtLink>
         <div
-          class="top-navegation-bar__menus-container"
-          :class="{ 'top-navegation-bar__menus-container--show': showMenubull }"
+          class="menus-container"
+          :class="{ 'menus-container--show': showMenubull }"
         >
-          <div
-            class="top-navegation-bar__menu-separator top-navegation-bar__menu-separator--uno"
-          >
+          <div class="menu-separator menu-separator--uno">
             <!-- <MainMenu /> -->
           </div>
-          <div
-            class="top-navegation-bar__menu-separator top-navegation-bar__menu-separator--dos"
-          >
-            <ButtonTheme/>
+          <div class="menu-separator menu-separator--dos">
+            <slot name="button-theme"/>
           </div>
           <!-- <Teleport v-if="showMenubull" to="body">
-            <div @click="showMenu" class="top-navegation-bar__panel-hidden"></div>
+            <div @click="showMenu" class="tnb__panel-hidden"></div>
           </Teleport> -->
         </div>
-        <div class="top-navegation-bar__button-container">
-          <!-- <button aria-label="Mostrar menú" @click="showMenu" class="top-navegation-bar__button"
-            id="top-navegation-bar__button"><font-awesome-icon icon="fa-solid fa-bars" /></button> -->
+        <div class="button-container">
+          <!-- <button aria-label="Mostrar menú" @click="showMenu" class="tnb__button"
+            id="tnb__button"><font-awesome-icon icon="fa-solid fa-bars" /></button> -->
         </div>
       </div>
     </header>
@@ -44,57 +33,56 @@ const showMenubull = ref(false);
 const showMenu = () => (showMenubull.value = !showMenubull.value);
 </script>
 
-<style lang="scss">
-@media screen and (min-width: 851px) {
-  .top-navegation-bar {
-    position: sticky;
-    top: 0;
-    z-index: 3;
+<style lang="scss" scoped>
+//top-navegation-bar tnb
+.tnb {
+  position: sticky;
+  top: 0;
+  z-index: 3;
 
-    &__logo {
-      cursor: pointer;
-    }
+  .logo {
+    cursor: pointer;
+  }
 
-    &__nav {
-      display: flex;
-      padding: 10px;
-      padding-right: 2rem;
-      padding-left: 2rem;
-    }
+  .nav {
+    display: flex;
+    padding: 10px;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
 
-    &__menus-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.5rem;
-      width: 100%;
-    }
+  .menus-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    width: 100%;
+  }
 
-    &__menu-separator {
-      display: flex;
-      gap: 1rem;
-    }
+  .menu-separator {
+    display: flex;
+    gap: 1rem;
+  }
 
-    &__button-container {
-      display: none;
-    }
+  .button-container {
+    display: none;
+  }
 
-    &__button {
-      border: none;
-      background-color: transparent;
-      font-size: xx-large;
-      cursor: pointer;
-    }
+  .button {
+    border: none;
+    background-color: transparent;
+    font-size: xx-large;
+    cursor: pointer;
   }
 }
 
 @media screen and (max-width: 850px) {
-  .top-navegation-bar {
+  .tnb {
     position: sticky;
     top: 0;
     z-index: 3;
 
-    &__nav {
+    .nav {
       display: flex;
       padding: 10px;
       padding-right: 2rem;
@@ -103,7 +91,7 @@ const showMenu = () => (showMenubull.value = !showMenubull.value);
       align-items: center;
     }
 
-    &__menus-container {
+    .menus-container {
       display: grid;
       grid-auto-rows: max-content;
       position: fixed;
@@ -121,7 +109,7 @@ const showMenu = () => (showMenubull.value = !showMenubull.value);
       }
     }
 
-    &__panel-hidden {
+    .panel-hidden {
       position: fixed;
       top: 0;
       right: 0;
@@ -130,7 +118,7 @@ const showMenu = () => (showMenubull.value = !showMenubull.value);
       z-index: 2;
     }
 
-    &__logo {
+    .logo {
       cursor: pointer;
 
       & > img {
@@ -138,18 +126,18 @@ const showMenu = () => (showMenubull.value = !showMenubull.value);
       }
     }
 
-    &__button-container {
+    .button-container {
       display: block;
     }
 
-    &__button {
+    .button {
       border: none;
       background-color: transparent;
       font-size: x-large;
       //cursor: pointer;
     }
 
-    &__menu-separator {
+    .menu-separator {
       margin-top: 0.5rem;
 
       &--uno {
