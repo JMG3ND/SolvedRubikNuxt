@@ -1,0 +1,10 @@
+<template>
+  <div>
+    <NuxtImg
+      width="150"
+      height="44"
+      src="/images/logo-solvedrubik.png"
+      alt="logo-solvedrubik"
+    />
+  </div>
+</template>

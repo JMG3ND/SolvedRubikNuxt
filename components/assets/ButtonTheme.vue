@@ -17,4 +17,8 @@ const changeTheme = () => {
   isDark.value = !isDark.value;
   colorMode.value = isDark.value ? "dark" : "light";
 };
+
+onMounted(() => {
+  isDark.value = colorMode.value == "dark" 
+})
 </script>

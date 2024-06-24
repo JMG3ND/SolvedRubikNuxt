@@ -2,15 +2,10 @@
   <div>
     <TopNavegationBar>
       <template #logo>
-        <NuxtImg
-          width="150"
-          height="44"
-          src="/images/logo-solvedrubik.png"
-          alt="logo-solvedrubik"
-        />
+        <AssetsLogo />
       </template>
       <template #button-theme>
-        <ButtonTheme />
+        <AssetsButtonTheme />
       </template>
     </TopNavegationBar>
   </div>
