@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header class="tnb jeis border-b border-slate-400">
+    <header class="tnb jeis">
       <div class="nav jeis__container">
         <NuxtLink to="/" class="logo">
           <slot name="logo" />
@@ -9,9 +9,7 @@
           <div class="menu-separator menu-separator--uno">
             <!-- <MainMenu /> -->
           </div>
-          <div class="menu-separator menu-separator--dos">
-            <slot name="button-theme" />
-          </div>
+          <slot name="button-theme" />
         </div>
         <div class="button-container">
           <UButton
@@ -34,9 +32,6 @@
         @click="showMenubull = false"
       />
       <div class="menus-container--slide-over">
-        <div class="menu-separator menu-separator--dos">
-          <slot name="button-theme" />
-        </div>
         <div class="menu-separator menu-separator--uno">
           <!-- <MainMenu /> -->
         </div>
@@ -56,14 +51,16 @@ const showMenu = () => (showMenubull.value = !showMenubull.value);
   position: sticky;
   top: 0;
   z-index: 3;
+  border-bottom: 1px solid #94a3b8;
 
   .logo {
     cursor: pointer;
+    width: 250px;
   }
 
   .nav {
     display: flex;
-    padding: 10px;
+    padding: 5px;
     padding-right: 2rem;
     padding-left: 2rem;
   }
@@ -106,14 +103,8 @@ const showMenu = () => (showMenubull.value = !showMenubull.value);
       align-items: center;
     }
 
-    .menus-container {
+    .menus-separator {
       display: none;
-    }
-
-    .logo {
-      & > img {
-        width: 150px;
-      }
     }
 
     .button-container {
