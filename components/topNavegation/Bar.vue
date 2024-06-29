@@ -52,6 +52,7 @@ const showMenu = () => (showMenubull.value = !showMenubull.value);
   top: 0;
   z-index: 3;
   border-bottom: 1px solid #94a3b8;
+  padding: 0.5rem 0;
 
   .logo {
     cursor: pointer;
