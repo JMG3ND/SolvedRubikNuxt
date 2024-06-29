@@ -8,5 +8,6 @@
         <AssetsButtonTheme />
       </template>
     </TopNavegationBar>
+    <NuxtPage />
   </div>
 </template>
